@@ -15,6 +15,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.sub-header {
+  font-family: "Montserrat", sans-serif;
+}
+
 .contact-icons {
   display: flex;
   flex-direction: row;
@@ -42,21 +46,34 @@ i:hover {
 
 .portfolio-items {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   height: auto;
 }
 
+.section {
+  padding-bottom: 50px;
+}
+
 .project-div {
-  margin: 10px;
-  text-align: center;
+  margin-top: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-link {
+  width: 45%;
+}
+
+.description {
+  width: 45%;
 }
 
 .project-image {
   width: 100%;
   height: auto;
-  color: rgba(160,160,160, 0.5);
-  margin: 20px;
 }
 
 .project-image:hover {
@@ -65,19 +82,15 @@ i:hover {
         animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.about-div {
-  display: flex;
-  flex-direction: row;
-}
-
-.about-image {
-  width: 40%;
-}
-
 .headshot {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
+  float: left;
+  width: 30%;
+  padding: 40px;
+  shape-outside: circle();
+}
+
+.resume {
+  padding-top: 20%;
 }
 
 li {
@@ -113,15 +126,11 @@ li {
   .main_h {
     padding-top: 25px;
   }
-}
 
-.open-nav {
-  max-height: 400px !important;
-}
-
-.open-nav .mobile-toggle {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
+  i {
+    font-size: 30px;
+    color: hotpink;
+  }
 }
 
 .sticky {
@@ -142,7 +151,9 @@ li {
   line-height: 1;
   margin-bottom: 10px;
 }
+
 @media only screen and (max-width: 766px) {
+
   .logo {
     float: none;
   }
@@ -152,24 +163,21 @@ nav {
   float: right;
   width: 60%;
 }
+
 @media only screen and (max-width: 766px) {
   nav {
     width: 100%;
   }
 
-  .portfolio-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: auto;
-  }
 }
+
 nav ul {
   list-style: none;
   overflow: hidden;
   text-align: right;
   float: right;
 }
+
 @media only screen and (max-width: 766px) {
   nav ul {
     padding-top: 10px;
@@ -225,7 +233,7 @@ nav ul a {
 
 .row {
   width: 100%;
-  max-width: 940px;
+  max-width: 1050px;
   margin: 0 auto;
   position: relative;
   padding: 0 2%;
@@ -318,3 +326,137 @@ p {
     transform: translateY(20px);
   }
 }
+
+@media screen and (max-width: 864px) {
+	.logo {
+		padding: 0;
+	}
+
+	.nav-wrapper {
+		position: fixed;
+		text-outline: 0;
+		right: 0;
+		top: 0;
+		width: 50%;
+		height: 50%;
+		z-index: -1;
+		transition: all 0.2s ease;
+	}
+
+	.nav-wrapper ul {
+		position: absolute;
+		top: 40%;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+
+	.nav-wrapper ul li {
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: right;
+		margin-bottom: 10px;
+	}
+
+	.nav-wrapper ul li:nth-child(1) a {
+		transition-delay: 0.2s;
+	}
+
+	.nav-wrapper ul li:nth-child(2) a {
+		transition-delay: 0.3s;
+	}
+
+	.nav-wrapper ul li:nth-child(3) a {
+		transition-delay: 0.4s;
+	}
+
+	.nav-wrapper ul li:nth-child(4) a {
+		transition-delay: 0.5s;
+	}
+
+	.nav-wrapper ul li:not(:first-child) {
+		margin-left: 0;
+	}
+
+	.nav-wrapper ul li a {
+		padding: 10px 24px;
+		opacity: 0;
+		color: #000;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+		transform: translateX(-20px);
+		transition: all 0.2s ease;
+	}
+
+	.nav-btn {
+		position: fixed;
+		right: 10px;
+		top: 10px;
+		display: block;
+		width: 48px;
+		height: 48px;
+		cursor: pointer;
+		z-index: 9999;
+		border-radius: 50%;
+	}
+
+	.nav-btn i {
+		display: block;
+		width: 20px;
+		height: 2px;
+		background: #000;
+		border-radius: 2px;
+		margin-left: 14px;
+	}
+
+	.nav-btn i:nth-child(1) {
+		margin-top: 16px;
+	}
+
+	.nav-btn i:nth-child(2) {
+		margin-top: 4px;
+		opacity: 1;
+	}
+
+	.nav-btn i:nth-child(3) {
+		margin-top: 4px;
+	}
+
+}
+
+ #nav:checked + .nav-btn {
+ 	transform: rotate(45deg);
+ }
+
+  #nav:checked + .nav-btn i {
+  	background: #000;
+  	transition: transform 0.2s ease;
+  }
+
+  #nav:checked + .nav-btn i:nth-child(1) {
+  	transform: translateY(6px) rotate(180deg);
+  }
+
+  #nav:checked + .nav-btn i:nth-child(2) {
+  	opacity: 0;
+  }
+   #nav:checked + .nav-btn i:nth-child(3) {
+  	transform: translateY(-6px)rotate(90deg);
+  }
+
+ #nav:checked ~ .nav-wrapper {
+ 	z-index: 9990;
+ 	opacity: 1;
+  background: rgba(255, 255, 255, 0.8);
+
+ }
+
+ #nav:checked ~ .nav-wrapper ul li a {
+ 	opacity: 1;
+ 	transform: translateX(0);
+ }
+
+ .hidden {
+ 	display: none;
+ }
