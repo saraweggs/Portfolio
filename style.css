@@ -1,3 +1,7 @@
+body {
+  background: url('https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
 .main_h {
   position: fixed;
   top: 0px;
@@ -93,8 +97,66 @@ i:hover {
   padding-top: 20%;
 }
 
+.resume-div {
+  text-align: center;
+}
+
+.resume-items {
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 li {
   list-style: none;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+svg {
+  width: 4em;
+  height: auto;
+  padding: 7px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: auto;
+  align-items: baseline;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.skills-container i, .ruby-icon {
+  padding: 7px;
+}
+
+.language {
+  color: black;
+  padding-left: 15px;
+  margin-top: 10px;
+  float: right;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  font-size: 15px;
+  background-color: hotpink;
+  color: white;
+  border: white;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #8f8f8f;
+  -webkit-animation: shadow-drop-2-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: shadow-drop-2-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
 }
 
 @-webkit-keyframes shadow-drop-2-center {
@@ -131,6 +193,7 @@ li {
     font-size: 30px;
     color: hotpink;
   }
+
 }
 
 .sticky {
@@ -331,6 +394,15 @@ p {
 	.logo {
 		padding: 0;
 	}
+
+  .about-div {
+    font-size: 1px;
+  }
+
+  .headshot {
+    width: 50%;
+    height: auto;
+  }
 
 	.nav-wrapper {
 		position: fixed;
